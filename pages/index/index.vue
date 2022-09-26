@@ -1,7 +1,13 @@
 <template>
 	<view>
-	<text class="iconfont text-center">1111</text>
-	<text class="iconfont text-center">1111</text>
+	<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" style="width: 750rpx; height: 400rpx;">
+		<swiper-item>
+			<image src="../../static/demo/banner/1.jpg" style="width: 750rpx; height: 400rpx;"></image>
+		</swiper-item>
+		<swiper-item>
+			<image src="../../static/demo/banner/2.jpg" style="width: 750rpx; height: 400rpx;"></image>
+		</swiper-item>
+	</swiper>
 
 	</view>
 </template>

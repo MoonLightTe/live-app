@@ -3,7 +3,15 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "火影"
+				"app-plus": {
+					"titleNView": {
+						"titleText": "火影",
+						"titleAlign": "left",
+						"buttons": [{
+							"type": "menu"
+						}]
+					}
+				}
 			}
 		}
 	  

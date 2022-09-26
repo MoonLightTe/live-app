@@ -244,12 +244,44 @@ var render = function() {
     "uni-view",
     { attrs: { _i: 0 } },
     [
-      _c("v-uni-text", { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } }, [
-        _vm._v("1111")
-      ]),
-      _c("v-uni-text", { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } }, [
-        _vm._v("1111")
-      ])
+      _c(
+        "v-uni-swiper",
+        {
+          staticStyle: { width: "750rpx", height: "400rpx" },
+          attrs: {
+            "indicator-dots": true,
+            autoplay: true,
+            interval: 3000,
+            duration: 1000,
+            _i: 1
+          }
+        },
+        [
+          _c(
+            "v-uni-swiper-item",
+            { attrs: { _i: 2 } },
+            [
+              _c("v-uni-image", {
+                staticStyle: { width: "750rpx", height: "400rpx" },
+                attrs: { src: _vm._$g(3, "a-src"), _i: 3 }
+              })
+            ],
+            1
+          ),
+          _c(
+            "v-uni-swiper-item",
+            { attrs: { _i: 4 } },
+            [
+              _c("v-uni-image", {
+                staticStyle: { width: "750rpx", height: "400rpx" },
+                attrs: { src: _vm._$g(5, "a-src"), _i: 5 }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      )
     ],
     1
   )
