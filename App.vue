@@ -20,8 +20,9 @@
 <style>
 	/*每个页面公共css */
 	@import url('/common/common.css');
-	@import url('/common/free.css');
-	/* #ifdef APP-PLUS-NVUE */
+	@import url('/common/free.css');	
 	@import url("/common/icon.css");
+	/* #ifdef APP-PLUS-NVUE */
+
 	/* #endif */
 </style>
