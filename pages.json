@@ -24,6 +24,19 @@
             }
             
         }
+        ,{
+            "path" : "pages/live/live",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "直播间",
+                "enablePullDownRefresh": false,
+				"app-plus": {
+				"titleNView": false
+				}
+            }
+			
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

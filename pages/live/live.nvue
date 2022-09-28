@@ -1,0 +1,47 @@
+<template>
+	<view class="page">
+		<video class="flex-1" src="https://cctvwbndks.v.kcdnvip.com/cctvwbnd/cctv1_2/index.m3u8" autoplay></video>
+
+		<!-- 頂部 -->
+		<view  style="position: fixed;left:0;right: 0;" :style="`top:${statusBarHeight}px`">
+			<view class="bg-danger" style="height: 80rpx;">
+
+			</view>
+			<view class="bg-primary" style="height: 80rpx;">
+
+			</view>
+			<view class="bg-secondary" style="height: 500rpx; width: 500rpx;">
+
+			</view>
+		</view>
+		<!-- 彈幕組件 -->
+	<view class="bg-warning position-fixed" style="left:0; bottom: 120rpx; width: 500rpx; height: 500rpx;">
+
+		</view>
+		<!--底部  -->
+		<view style="position: fixed;left: 0; bottom: 0;right: 0; height: 120rpx;" class="bg-danger"></view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				statusBarHeight: 0
+			}
+		},
+		onLoad() {
+			let res = uni.getSystemInfoSync()
+			this.statusBarHeight = res.statusBarHeight
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+	.page {
+		flex: 1;
+	}
+</style>

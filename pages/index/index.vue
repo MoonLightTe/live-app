@@ -13,7 +13,7 @@
 		<!-- 主播列表 -->
 		<view class="flex flex-wrap" style="width:100%;">
 			<view class="m-1 position-relative" style="width: 355rpx;;height: 355rpx; box-sizing: border-box;"
-				v-for="item in 8" :key="item">
+				v-for="item in 8" :key="item" @click="openLive">
 				<image src="../../static/demo/1.jpg" class="rounded" mode="aspectFill"
 					style="width: 100%; height: 100%;"></image>
 				<!-- 左上角提示 -->
@@ -31,9 +31,9 @@
 					<text class="text-white">直播间标题</text>
 				</view>
 				<!--右下角提示:是否开始 -->
-				<tips class='position-absolute bottomRight font-sm flex align-center'>
-				<view class="bg-danger rounded-circle" style="width: 20rpx; height: 20rpx;" />
-				<text class="pr-1 text-white">已结束</text>
+				<tips class='position-absolute bottomRight font-sm flex align-center justify-between'>
+				<view class="bg-danger rounded-circle" style="width: 20rpx; height: 20rpx; " />
+				<text class=" text-white pl-1">已结束</text>
 				</tips>
 			</view>
 		</view>
@@ -51,7 +51,12 @@
 
 		},
 		methods: {
-
+				
+			openLive(){
+				uni.navigateTo({
+					url:'/pages/live/live'
+				})
+			}
 		}
 	}
 </script>
