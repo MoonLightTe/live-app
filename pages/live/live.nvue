@@ -4,8 +4,10 @@
 		<!-- <video class="flex-1"
 			src="https://c1--cn-gotcha208.bilivideo.com/live-bvc/454036/live_15004349_10973745_1500/index.m3u8?expires=1665302917&len=0&oi=1902996958&pt=web&qn=0&trid=100757667edfa7d1408cbc74989ada980377&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha208&sign=fc4b78ae4be38d0c628a96bd3fd3251d&sk=14523fba55a362a3149555042c005152&p2p_type=1&src=57345&sl=1&free_type=0&pp=rtmp&machinezone=jd&source=onetier&site=921e1f1e81b9a90635f2e3227cd0cb6c&order=1"
 			autoplay></video> -->
-			 <!-- <video class="flex-1" src="https://upos-sz-estgoss.bilivideo.com/upgcxcode/25/51/840415125/840415125-1-64.flv?e=ig8euxZM2rNcNbRj7bdVhwdlhWTjhwdVhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1665312038&gen=playurlv2&os=upos&oi=1902996958&trid=db0c1076ec884346a9c62f9e0b810b83u&mid=111924598&platform=pc&upsig=32ad2413e62b6647f70959918633f723&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&bvc=vod&nettype=0&orderid=0,3&agrr=1&bw=166796&logo=80000000" autoplay></video> -->
-			 <video class="flex-1" src="https://cn-gddg-ct-01-21.bilivideo.com/live-bvc/696783/live_1388514638_9387369_4000/index.m3u8?expires=1665308701&len=0&oi=1902996958&pt=web&qn=0&trid=1007e8e55a9c21ac4ac6aa6dc874fb49d8de&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha01&sign=de97fa066d1ebb0eaf6f43b2c05b39a0&sk=657866af8fc16d8b2b84dfdde3e9814376eb4640b48f5932d44509b3af9da4a2&flvsk=1304f646dfeb4df8b6e7ff33c167d3ad491555cae985818bb2a5ec341f048d3d&p2p_type=1&src=57345&sl=10&free_type=0&sid=cn-gddg-ct-01-21&chash=1&sche=ban&bvchls=1&score=18&pp=rtmp&machinezone=jd&source=onetier&site=4a1fed473066c9551f875584128a0c0a&order=1" autoplay></video>
+		<!-- <video class="flex-1" src="https://upos-sz-estgoss.bilivideo.com/upgcxcode/25/51/840415125/840415125-1-64.flv?e=ig8euxZM2rNcNbRj7bdVhwdlhWTjhwdVhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1665312038&gen=playurlv2&os=upos&oi=1902996958&trid=db0c1076ec884346a9c62f9e0b810b83u&mid=111924598&platform=pc&upsig=32ad2413e62b6647f70959918633f723&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&bvc=vod&nettype=0&orderid=0,3&agrr=1&bw=166796&logo=80000000" autoplay></video> -->
+		<video class="flex-1"
+			src="https://cn-gddg-ct-01-21.bilivideo.com/live-bvc/696783/live_1388514638_9387369_4000/index.m3u8?expires=1665308701&len=0&oi=1902996958&pt=web&qn=0&trid=1007e8e55a9c21ac4ac6aa6dc874fb49d8de&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha01&sign=de97fa066d1ebb0eaf6f43b2c05b39a0&sk=657866af8fc16d8b2b84dfdde3e9814376eb4640b48f5932d44509b3af9da4a2&flvsk=1304f646dfeb4df8b6e7ff33c167d3ad491555cae985818bb2a5ec341f048d3d&p2p_type=1&src=57345&sl=10&free_type=0&sid=cn-gddg-ct-01-21&chash=1&sche=ban&bvchls=1&score=18&pp=rtmp&machinezone=jd&source=onetier&site=4a1fed473066c9551f875584128a0c0a&order=1"
+			autoplay></video>
 		<!-- 頂部 -->
 		<view style="position: fixed;left:0;right: 0;" :style="`top:${statusBarHeight}px`">
 			<!-- 顶部 头像 和在线观看的用户 -->
@@ -48,49 +50,30 @@
 
 			<!-- 金币 -->
 			<view class=" flex px-2 my-2" style="height: 80rpx;">
-			<view class="rounded-circle  flex align-center" style="width: 325rpx;" >
-				<text class="text-warning p">金币</text>
-				<text class="text-white p font">100</text>
-			</view>
+				<view class="rounded-circle  flex align-center" style="width: 325rpx;">
+					<text class="text-warning p">金币</text>
+					<text class="text-white p font">100</text>
+				</view>
 			</view>
 			<!-- 禮物組件 -->
-			<view  style="height: 500rpx;">
-				<scroll-view scroll-y="true" style="width: 520rpx; height: 500rpx;" >
-					<view class="flex align-center px-3">
-						<view class="rounded-circle flex justify-between align-center" style="width: 325rpx;background-image:linear-gradient(to right,#bcabb1,#65aaf0); height: 80rpx;">
-								<!--送禮物的人的頭像 -->
-							<view class="p" >
-								<image src="../../static/logo.png" style="width: 70rpx; height: 70rpx;" class=" rounded-circle"></image>
-							</view>
-							<view class="flex-1">
-								<text class="text-white font">昵稱</text>
-								<text class="text-white font">送蛋糕</text>
-							</view>
-							<!-- 禮物的圖片 -->
-							<view class="p" >
-								<image src="../../static/logo.png" style="width: 70rpx; height: 70rpx;" class=" rounded-circle"></image>
-							</view>
-						</view>
-						<view class="flex ml-2 align-center" style="height: 80rpx;">
-						<text class="text-warning">X</text>
-						<text class="text-warning ml-1">10</text>
-					</view>
-					</view>
-					
-				</scroll-view>
-			</view>
-		</view>
-		<!-- 彈幕組件 -->
-		<view class="bg-warning position-fixed" style="left:0; bottom: 120rpx; width: 500rpx; height: 500rpx;">
+			<liveGift></liveGift>
+			<!-- 彈幕組件 -->
+			<view class="bg-warning position-fixed" style="left:0; bottom: 120rpx; width: 500rpx; height: 500rpx;">
 
+			</view>
+			<!--底部  -->
+			<view style="position: fixed;left: 0; bottom: 0;right: 0; height: 120rpx;" class="bg-danger"></view>
 		</view>
-		<!--底部  -->
-		<view style="position: fixed;left: 0; bottom: 0;right: 0; height: 120rpx;" class="bg-danger"></view>
-	</view>
+		</view>
 </template>
 
 <script>
+	import liveGift from '@/components/live/live-gift.vue'
 	export default {
+
+		components: {
+			liveGift,
+		},
 		data() {
 			return {
 				statusBarHeight: 0
