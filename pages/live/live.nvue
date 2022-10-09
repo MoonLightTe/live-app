@@ -1,12 +1,49 @@
 <template>
 	<view class="page">
-		<video class="flex-1" src="https://cctvwbndks.v.kcdnvip.com/cctvwbnd/cctv1_2/index.m3u8" autoplay></video>
-
+		<!-- <video class="flex-1" src="https://cctvwbndks.v.kcdnvip.com/cctvwbnd/cctv1_2/index.m3u8" autoplay></video> -->
+		<video class="flex-1"
+			src="https://c1--cn-gotcha208.bilivideo.com/live-bvc/454036/live_15004349_10973745_1500/index.m3u8?expires=1665302917&len=0&oi=1902996958&pt=web&qn=0&trid=100757667edfa7d1408cbc74989ada980377&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha208&sign=fc4b78ae4be38d0c628a96bd3fd3251d&sk=14523fba55a362a3149555042c005152&p2p_type=1&src=57345&sl=1&free_type=0&pp=rtmp&machinezone=jd&source=onetier&site=921e1f1e81b9a90635f2e3227cd0cb6c&order=1"
+			autoplay></video>
 		<!-- 頂部 -->
-		<view  style="position: fixed;left:0;right: 0;" :style="`top:${statusBarHeight}px`">
-			<view class="bg-danger" style="height: 80rpx;">
+		<view style="position: fixed;left:0;right: 0;" :style="`top:${statusBarHeight}px`">
+			<!-- 顶部 头像 和在线观看的用户 -->
+			<view class=" px-2 flex justify-between" style="height: 80rpx;">
+				<view class="flex rounded-circle bg-info justify-between align-center" style="width: 325rpx;">
+					<!-- 主播头像 -->
+					<view class="p">
+						<image src="../../static/gift/5.png" style="width: 70rpx; height: 70rpx;"
+							class="rounded-circle bg-danger"></image>
+					</view>
+					<view class="flex-1 flex flex-column justify-center">
+						<text class="text-white font">昵称</text>
+						<text class="text-white font">100</text>
+					</view>
 
+					<view class="p">
+						<view class="rounded-circle bg-danger flex align-center justify-center"
+							style="width: 70rpx; height: 70rpx;">
+							<text class="text-white font-lg">+</text>
+						</view>
+					</view>
+				</view>
+				<!-- background-color: rgba(0, 0, 0, .4); -->
+				<view class="bg-danger flex rounded-circle justify-between bg-info" style="width: 325rpx;" >
+					<scroll-view scroll-x="true" class=" flex-1 flex">
+						<view class="p" v-for="i in 10 " :key="i">
+							<image src="../../static/gift/5.png" style="width: 70rpx; height: 70rpx;"
+								class="rounded-circle "></image>
+						</view>
+					</scroll-view>
+					<view class="p">
+						<view class="rounded-circle flex align-center justify-center bg-danger" style="width: 70rpx;height: 70rpx;">
+							<text class="text-white font">1000</text>
+						</view>
+					</view>
+				</view>
 			</view>
+
+
+			<!--  -->
 			<view class="bg-primary" style="height: 80rpx;">
 
 			</view>
@@ -15,7 +52,7 @@
 			</view>
 		</view>
 		<!-- 彈幕組件 -->
-	<view class="bg-warning position-fixed" style="left:0; bottom: 120rpx; width: 500rpx; height: 500rpx;">
+		<view class="bg-warning position-fixed" style="left:0; bottom: 120rpx; width: 500rpx; height: 500rpx;">
 
 		</view>
 		<!--底部  -->
