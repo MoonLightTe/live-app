@@ -1538,115 +1538,131 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "view",
-    { staticStyle: { height: "500rpx" } },
-    [
-      _c(
-        "scroll-view",
+    "list",
+    {
+      staticStyle: { width: "520rpx", height: "500rpx" },
+      attrs: { showScrollbar: false, bounce: false }
+    },
+    _vm._l(10, function(i) {
+      return _c(
+        "cell",
         {
-          staticStyle: { width: "520rpx", height: "500rpx" },
-          attrs: { scrollY: "true" }
+          key: i,
+          staticClass: ["flex", "align-center", "px-3", "pt-3"],
+          appendAsTree: true,
+          attrs: { append: "tree" }
         },
         [
-          _c("view", { staticClass: ["flex", "align-center", "px-3"] }, [
-            _c(
-              "view",
-              {
-                staticClass: [
-                  "rounded-circle",
-                  "flex",
-                  "justify-between",
-                  "align-center"
+          _c(
+            "view",
+            {
+              staticClass: [
+                "rounded-circle",
+                "flex",
+                "justify-between",
+                "align-center"
+              ],
+              staticStyle: {
+                width: "325rpx",
+                backgroundImage: "linear-gradient(to right,#bcabb1,#65aaf0)",
+                height: "80rpx"
+              }
+            },
+            [
+              _c(
+                "view",
+                { staticClass: ["p"] },
+                [
+                  _c("u-image", {
+                    staticClass: ["rounded-circle"],
+                    staticStyle: { width: "70rpx", height: "70rpx" },
+                    attrs: { src: "../../static/logo.png" }
+                  })
                 ],
-                staticStyle: {
-                  width: "325rpx",
-                  backgroundImage: "linear-gradient(to right,#bcabb1,#65aaf0)",
-                  height: "80rpx"
-                }
-              },
-              [
-                _c(
-                  "view",
-                  { staticClass: ["p"] },
-                  [
-                    _c("u-image", {
-                      staticClass: ["rounded-circle"],
-                      staticStyle: { width: "70rpx", height: "70rpx" },
-                      attrs: { src: "../../static/logo.png" }
-                    })
-                  ],
-                  1
-                ),
-                _c("view", { staticClass: ["flex-1"] }, [
-                  _c(
-                    "u-text",
-                    {
-                      staticClass: ["text-white", "font"],
-                      appendAsTree: true,
-                      attrs: { append: "tree" }
-                    },
-                    [_vm._v("昵稱")]
-                  ),
-                  _c(
-                    "u-text",
-                    {
-                      staticClass: ["text-white", "font"],
-                      appendAsTree: true,
-                      attrs: { append: "tree" }
-                    },
-                    [_vm._v("送蛋糕")]
-                  )
-                ]),
-                _c(
-                  "view",
-                  { staticClass: ["p"] },
-                  [
-                    _c("u-image", {
-                      staticClass: ["rounded-circle"],
-                      staticStyle: { width: "70rpx", height: "70rpx" },
-                      attrs: { src: "../../static/logo.png" }
-                    })
-                  ],
-                  1
-                )
-              ]
-            ),
-            _c(
-              "view",
-              {
-                staticClass: ["flex", "ml-2", "align-center"],
-                staticStyle: { height: "80rpx" }
-              },
-              [
-                _c(
-                  "u-text",
-                  {
-                    staticClass: ["text-warning"],
-                    appendAsTree: true,
-                    attrs: { append: "tree" }
-                  },
-                  [_vm._v("X")]
-                ),
-                _c(
-                  "u-text",
-                  {
-                    staticClass: ["text-warning", "ml-1"],
-                    appendAsTree: true,
-                    attrs: { append: "tree" }
-                  },
-                  [_vm._v("10")]
-                )
-              ]
-            )
-          ])
+                1
+              ),
+              _vm._m(0, true),
+              _c(
+                "view",
+                { staticClass: ["p"] },
+                [
+                  _c("u-image", {
+                    staticClass: ["rounded-circle"],
+                    staticStyle: { width: "70rpx", height: "70rpx" },
+                    attrs: { src: "../../static/logo.png" }
+                  })
+                ],
+                1
+              )
+            ]
+          ),
+          _vm._m(1, true)
         ]
       )
-    ],
-    1
+    }),
+    0
   )
 }
 var recyclableRender = false
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("view", { staticClass: ["flex-1"] }, [
+      _c(
+        "u-text",
+        {
+          staticClass: ["text-white", "font"],
+          appendAsTree: true,
+          attrs: { append: "tree" }
+        },
+        [_vm._v("昵稱")]
+      ),
+      _c(
+        "u-text",
+        {
+          staticClass: ["text-white", "font"],
+          appendAsTree: true,
+          attrs: { append: "tree" }
+        },
+        [_vm._v("送蛋糕")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "view",
+      {
+        staticClass: ["flex", "ml-2", "align-center"],
+        staticStyle: { height: "80rpx" }
+      },
+      [
+        _c(
+          "u-text",
+          {
+            staticClass: ["text-warning"],
+            appendAsTree: true,
+            attrs: { append: "tree" }
+          },
+          [_vm._v("X")]
+        ),
+        _c(
+          "u-text",
+          {
+            staticClass: ["text-warning", "ml-1"],
+            appendAsTree: true,
+            attrs: { append: "tree" }
+          },
+          [_vm._v("10")]
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -1670,7 +1686,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _E_H
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n////# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIxNC5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///14\n");
+eval("//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n////# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIxNC5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///14\n");
 
 /***/ }),
 /* 15 */

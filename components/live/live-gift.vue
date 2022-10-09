@@ -1,7 +1,7 @@
 <template>
-	<view  style="height: 500rpx;">
-		<scroll-view scroll-y="true" style="width: 520rpx; height: 500rpx;" >
-			<view class="flex align-center px-3">
+	<list style="width: 520rpx; height: 500rpx;" :show-scrollbar='false' :bounce='false'>
+	    <!-- 注意事项: 不能使用 index 作为 key 的唯一标识 -->
+	    <cell v-for="i in 10" :key="i"  class="flex align-center px-3 pt-3">
 				<view class="rounded-circle flex justify-between align-center" style="width: 325rpx;background-image:linear-gradient(to right,#bcabb1,#65aaf0); height: 80rpx;">
 						<!--送禮物的人的頭像 -->
 					<view class="p" >
@@ -20,9 +20,11 @@
 				<text class="text-warning">X</text>
 				<text class="text-warning ml-1">10</text>
 			</view>
-			</view>
-		</scroll-view>
-	</view>
+		
+		
+	    </cell>
+	  </list>
+	
 </template>
 
 <script>
