@@ -27,7 +27,7 @@
 					</view>
 				</view>
 				<!-- background-color: rgba(0, 0, 0, .4); -->
-				<view class="bg-danger flex rounded-circle justify-between bg-info" style="width: 325rpx;" >
+				<view class="bg-danger flex rounded-circle justify-between bg-info" style="width: 325rpx;">
 					<scroll-view scroll-x="true" class=" flex-1 flex">
 						<view class="p" v-for="i in 10 " :key="i">
 							<image src="../../static/gift/5.png" style="width: 70rpx; height: 70rpx;"
@@ -35,17 +35,21 @@
 						</view>
 					</scroll-view>
 					<view class="p">
-						<view class="rounded-circle flex align-center justify-center bg-danger" style="width: 70rpx;height: 70rpx;">
+						<view class="rounded-circle flex align-center justify-center bg-danger"
+							style="width: 70rpx;height: 70rpx;">
 							<text class="text-white font">1000</text>
 						</view>
 					</view>
 				</view>
 			</view>
+			<!-- 在nvue中只能在text文件写文件 -->
 
-
-			<!--  -->
-			<view class="bg-primary" style="height: 80rpx;">
-
+			<!-- 金币 -->
+			<view class=" flex px-2 my-2" style="height: 80rpx;">
+			<view class="rounded-circle  flex align-center" style="width: 325rpx;" >
+				<text class="text-warning p">金币</text>
+				<text class="text-white p">100</text>
+			</view>
 			</view>
 			<view class="bg-secondary" style="height: 500rpx; width: 500rpx;">
 
