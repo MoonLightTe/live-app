@@ -1543,14 +1543,20 @@ var render = function() {
       staticStyle: { width: "520rpx", height: "500rpx" },
       attrs: { showScrollbar: false, bounce: false }
     },
-    _vm._l(10, function(i) {
+    _vm._l(_vm.gifts, function(item, index) {
       return _c(
         "cell",
         {
-          key: i,
+          key: index,
+          ref: "item" + index,
+          refInFor: true,
           staticClass: ["flex", "align-center", "px-3", "pt-3"],
           appendAsTree: true,
-          attrs: { append: "tree" }
+          attrs: {
+            insertAnimation: "default",
+            deleteAnimation: "default",
+            append: "tree"
+          }
         },
         [
           _c(
@@ -1576,12 +1582,31 @@ var render = function() {
                   _c("u-image", {
                     staticClass: ["rounded-circle"],
                     staticStyle: { width: "70rpx", height: "70rpx" },
-                    attrs: { src: "../../static/logo.png" }
+                    attrs: { src: item.avatar || _vm.DefaultAvatar }
                   })
                 ],
                 1
               ),
-              _vm._m(0, true),
+              _c("view", { staticClass: ["flex-1"] }, [
+                _c(
+                  "u-text",
+                  {
+                    staticClass: ["text-white", "font"],
+                    appendAsTree: true,
+                    attrs: { append: "tree" }
+                  },
+                  [_vm._v(_vm._s(item.username))]
+                ),
+                _c(
+                  "u-text",
+                  {
+                    staticClass: ["text-white", "font"],
+                    appendAsTree: true,
+                    attrs: { append: "tree" }
+                  },
+                  [_vm._v("送" + _vm._s(item.gift_name))]
+                )
+              ]),
               _c(
                 "view",
                 { staticClass: ["p"] },
@@ -1589,14 +1614,40 @@ var render = function() {
                   _c("u-image", {
                     staticClass: ["rounded-circle"],
                     staticStyle: { width: "70rpx", height: "70rpx" },
-                    attrs: { src: "../../static/logo.png" }
+                    attrs: { src: "item.gift_image" }
                   })
                 ],
                 1
               )
             ]
           ),
-          _vm._m(1, true)
+          _c(
+            "view",
+            {
+              staticClass: ["flex", "ml-2", "align-center"],
+              staticStyle: { height: "80rpx" }
+            },
+            [
+              _c(
+                "u-text",
+                {
+                  staticClass: ["text-warning"],
+                  appendAsTree: true,
+                  attrs: { append: "tree" }
+                },
+                [_vm._v("X")]
+              ),
+              _c(
+                "u-text",
+                {
+                  staticClass: ["text-warning", "ml-1"],
+                  appendAsTree: true,
+                  attrs: { append: "tree" }
+                },
+                [_vm._v(_vm._s(item.num))]
+              )
+            ]
+          )
         ]
       )
     }),
@@ -1604,65 +1655,7 @@ var render = function() {
   )
 }
 var recyclableRender = false
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("view", { staticClass: ["flex-1"] }, [
-      _c(
-        "u-text",
-        {
-          staticClass: ["text-white", "font"],
-          appendAsTree: true,
-          attrs: { append: "tree" }
-        },
-        [_vm._v("昵稱")]
-      ),
-      _c(
-        "u-text",
-        {
-          staticClass: ["text-white", "font"],
-          appendAsTree: true,
-          attrs: { append: "tree" }
-        },
-        [_vm._v("送蛋糕")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "view",
-      {
-        staticClass: ["flex", "ml-2", "align-center"],
-        staticStyle: { height: "80rpx" }
-      },
-      [
-        _c(
-          "u-text",
-          {
-            staticClass: ["text-warning"],
-            appendAsTree: true,
-            attrs: { append: "tree" }
-          },
-          [_vm._v("X")]
-        ),
-        _c(
-          "u-text",
-          {
-            staticClass: ["text-warning", "ml-1"],
-            appendAsTree: true,
-            attrs: { append: "tree" }
-          },
-          [_vm._v("10")]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -1684,9 +1677,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _E_H
   !*** ./node_modules/babel-loader/lib??ref--5-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--5-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!F:/直播app/components/live/live-gift.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n////# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIxNC5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///14\n");
+"use strict";
+eval("/* WEBPACK VAR INJECTION */(function(__f__) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\nvar dom = weex.requireModule('dom');var _default =\n{\n  data: function data() {\n    return {\n      // 礼物列表\n      gifts: [],\n      // 默认头像\n      DefaultAvatar: \"../../static/logo.png\" };\n\n  },\n  // 组件中是不存在onload的 我们可以使用 created\n  created: function created() {var _this = this;\n    setInterval(function () {\n      _this.gifts.push({\n        username: '小智',\n        avatar: \"../../static/logo.png\",\n        gift_name: \"小火龙\",\n        gift_image: '../../static/gift/3.png',\n        num: 1 });\n\n      _this.toBottom();\n    }, 3000);\n  },\n  methods: {\n    // 我们需要解决一个问题 ，就是礼物不会滚动的问题 weex 有一个dom模块\n    // 1.给每一个cell组件动态绑定一个ref 在使用weex的一个方法来实现\n    // 2.操作dom一定需要在nextTick这个钩子函数中来进行\n    // 虚拟dom的时候我们是读不到的\n    toBottom: function toBottom() {var _this2 = this;\n      this.$nextTick(function () {\n        var index = _this2.gifts.length - 1;\n        var ref = 'item' + index;\n        if (_this2.$refs[ref]) {\n          __f__(\"log\", _this2.$refs[ref][0], \" at components/live/live-gift.vue:68\");\n          dom.scrollToElement(_this2.$refs[ref][0], {});\n        }\n      });\n\n    } } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/lib/format-log.js */ 18)[\"default\"]))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vY29tcG9uZW50cy9saXZlL2xpdmUtZ2lmdC52dWUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQWtDQSxvQztBQUNBO0FBQ0EsTUFEQSxrQkFDQTtBQUNBO0FBQ0E7QUFDQSxlQUZBO0FBR0E7QUFDQSw0Q0FKQTs7QUFNQSxHQVJBO0FBU0E7QUFDQSxTQVZBLHFCQVVBO0FBQ0E7QUFDQTtBQUNBLHNCQURBO0FBRUEsdUNBRkE7QUFHQSx3QkFIQTtBQUlBLDZDQUpBO0FBS0EsY0FMQTs7QUFPQTtBQUNBLEtBVEEsRUFTQSxJQVRBO0FBVUEsR0FyQkE7QUFzQkE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLFlBTEEsc0JBS0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLE9BUEE7O0FBU0EsS0FmQSxFQXRCQSxFIiwiZmlsZSI6IjE0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiPHRlbXBsYXRlPlxyXG5cdDxsaXN0IHN0eWxlPVwid2lkdGg6IDUyMHJweDsgaGVpZ2h0OiA1MDBycHg7XCIgOnNob3ctc2Nyb2xsYmFyPSdmYWxzZScgOmJvdW5jZT0nZmFsc2UnPlxyXG5cdFx0PCEtLSDms6jmhI/kuovpobk6IOS4jeiDveS9v+eUqCBpbmRleCDkvZzkuLoga2V5IOeahOWUr+S4gOagh+ivhiAtLT5cclxuXHRcdDwhLS0g6K6+572u6L+b5YWl5Yqo55S75ZKM56a75Zy65Yqo55S7aW5zZXJ0LWFuaW1hdGlvbiBkZWxldGUtYW5pbWF0aW9uIC0tPlxyXG5cdFx0PGNlbGwgdi1mb3I9XCIoaXRlbSxpbmRleCkgaW4gZ2lmdHNcIiA6a2V5PVwiaW5kZXhcIiBjbGFzcz1cImZsZXggYWxpZ24tY2VudGVyIHB4LTMgcHQtM1wiIGluc2VydC1hbmltYXRpb249J2RlZmF1bHQnXHJcblx0XHRcdGRlbGV0ZS1hbmltYXRpb249J2RlZmF1bHQnIDpyZWY9XCInaXRlbScrIGluZGV4XCI+XHJcblx0XHRcdDx2aWV3IGNsYXNzPVwicm91bmRlZC1jaXJjbGUgZmxleCBqdXN0aWZ5LWJldHdlZW4gYWxpZ24tY2VudGVyXCJcclxuXHRcdFx0XHRzdHlsZT1cIndpZHRoOiAzMjVycHg7YmFja2dyb3VuZC1pbWFnZTpsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsI2JjYWJiMSwjNjVhYWYwKTsgaGVpZ2h0OiA4MHJweDtcIj5cclxuXHRcdFx0XHQ8IS0t6YCB56au54mp55qE5Lq655qE6aCt5YOPIC0tPlxyXG5cdFx0XHRcdDx2aWV3IGNsYXNzPVwicFwiPlxyXG5cdFx0XHRcdFx0PGltYWdlIDpzcmM9XCJpdGVtLmF2YXRhciB8fCBEZWZhdWx0QXZhdGFyIFwiIHN0eWxlPVwid2lkdGg6IDcwcnB4OyBoZWlnaHQ6IDcwcnB4O1wiXHJcblx0XHRcdFx0XHRcdGNsYXNzPVwiIHJvdW5kZWQtY2lyY2xlXCI+PC9pbWFnZT5cclxuXHRcdFx0XHQ8L3ZpZXc+XHJcblx0XHRcdFx0PHZpZXcgY2xhc3M9XCJmbGV4LTFcIj5cclxuXHRcdFx0XHRcdDx0ZXh0IGNsYXNzPVwidGV4dC13aGl0ZSBmb250XCI+e3tpdGVtLnVzZXJuYW1lfX08L3RleHQ+XHJcblx0XHRcdFx0XHQ8dGV4dCBjbGFzcz1cInRleHQtd2hpdGUgZm9udFwiPumAgXt7aXRlbS5naWZ0X25hbWV9fTwvdGV4dD5cclxuXHRcdFx0XHQ8L3ZpZXc+XHJcblx0XHRcdFx0PCEtLSDnpq7niannmoTlnJbniYcgLS0+XHJcblx0XHRcdFx0PHZpZXcgY2xhc3M9XCJwXCI+XHJcblx0XHRcdFx0XHQ8aW1hZ2Ugc3JjPVwiaXRlbS5naWZ0X2ltYWdlXCIgc3R5bGU9XCJ3aWR0aDogNzBycHg7IGhlaWdodDogNzBycHg7XCIgY2xhc3M9XCIgcm91bmRlZC1jaXJjbGVcIj48L2ltYWdlPlxyXG5cdFx0XHRcdDwvdmlldz5cclxuXHRcdFx0PC92aWV3PlxyXG5cdFx0XHQ8dmlldyBjbGFzcz1cImZsZXggbWwtMiBhbGlnbi1jZW50ZXJcIiBzdHlsZT1cImhlaWdodDogODBycHg7XCI+XHJcblx0XHRcdFx0PHRleHQgY2xhc3M9XCJ0ZXh0LXdhcm5pbmdcIj5YPC90ZXh0PlxyXG5cdFx0XHRcdDx0ZXh0IGNsYXNzPVwidGV4dC13YXJuaW5nIG1sLTFcIj57e2l0ZW0ubnVtfX08L3RleHQ+XHJcblx0XHRcdDwvdmlldz5cclxuXHJcblxyXG5cdFx0PC9jZWxsPlxyXG5cdDwvbGlzdD5cclxuXHJcbjwvdGVtcGxhdGU+XHJcblxyXG48c2NyaXB0PlxyXG5cdGNvbnN0IGRvbSA9IHdlZXgucmVxdWlyZU1vZHVsZSgnZG9tJylcclxuXHRleHBvcnQgZGVmYXVsdCB7XHJcblx0XHRkYXRhKCkge1xyXG5cdFx0XHRyZXR1cm4ge1xyXG5cdFx0XHRcdC8vIOekvOeJqeWIl+ihqFxyXG5cdFx0XHRcdGdpZnRzOiBbXSxcclxuXHRcdFx0XHQvLyDpu5jorqTlpLTlg49cclxuXHRcdFx0XHREZWZhdWx0QXZhdGFyOiBcIi4uLy4uL3N0YXRpYy9sb2dvLnBuZ1wiXHJcblx0XHRcdH1cclxuXHRcdH0sXHJcblx0XHQvLyDnu4Tku7bkuK3mmK/kuI3lrZjlnKhvbmxvYWTnmoQg5oiR5Lus5Y+v5Lul5L2/55SoIGNyZWF0ZWRcclxuXHRcdGNyZWF0ZWQoKSB7XHJcblx0XHRcdHNldEludGVydmFsKCgpID0+IHtcclxuXHRcdFx0XHR0aGlzLmdpZnRzLnB1c2goe1xyXG5cdFx0XHRcdFx0dXNlcm5hbWU6ICflsI/mmbonLFxyXG5cdFx0XHRcdFx0YXZhdGFyOiBcIi4uLy4uL3N0YXRpYy9sb2dvLnBuZ1wiLFxyXG5cdFx0XHRcdFx0Z2lmdF9uYW1lOiBcIuWwj+eBq+m+mVwiLFxyXG5cdFx0XHRcdFx0Z2lmdF9pbWFnZTogJy4uLy4uL3N0YXRpYy9naWZ0LzMucG5nJyxcclxuXHRcdFx0XHRcdG51bTogMSxcclxuXHRcdFx0XHR9KVxyXG5cdFx0XHRcdHRoaXMudG9Cb3R0b20oKVxyXG5cdFx0XHR9LCAzMDAwKVxyXG5cdFx0fSxcclxuXHRcdG1ldGhvZHM6IHtcclxuXHRcdFx0Ly8g5oiR5Lus6ZyA6KaB6Kej5Yaz5LiA5Liq6Zeu6aKYIO+8jOWwseaYr+ekvOeJqeS4jeS8mua7muWKqOeahOmXrumimCB3ZWV4IOacieS4gOS4qmRvbeaooeWdl1xyXG5cdFx0XHQvLyAxLue7meavj+S4gOS4qmNlbGznu4Tku7bliqjmgIHnu5HlrprkuIDkuKpyZWYg5Zyo5L2/55Sod2VleOeahOS4gOS4quaWueazleadpeWunueOsFxyXG5cdFx0XHQvLyAyLuaTjeS9nGRvbeS4gOWumumcgOimgeWcqG5leHRUaWNr6L+Z5Liq6ZKp5a2Q5Ye95pWw5Lit5p2l6L+b6KGMXHJcblx0XHRcdC8vIOiZmuaLn2RvbeeahOaXtuWAmeaIkeS7rOaYr+ivu+S4jeWIsOeahFxyXG5cdFx0XHR0b0JvdHRvbSgpIHtcclxuXHRcdFx0XHR0aGlzLiRuZXh0VGljaygoKT0+e1xyXG5cdFx0XHRcdGxldCBpbmRleCA9IHRoaXMuZ2lmdHMubGVuZ3RoIC0gMTtcclxuXHRcdFx0XHRsZXQgcmVmID0gJ2l0ZW0nICsgaW5kZXhcclxuXHRcdFx0XHRpZih0aGlzLiRyZWZzW3JlZl0pe1xyXG5cdFx0XHRcdFx0Y29uc29sZS5sb2codGhpcy4kcmVmc1tyZWZdWzBdKTtcclxuXHRcdFx0XHRcdGRvbS5zY3JvbGxUb0VsZW1lbnQodGhpcy4kcmVmc1tyZWZdWzBdLHt9KVxyXG5cdFx0XHRcdH1cclxuXHRcdFx0XHR9KVxyXG5cdFx0XHRcclxuXHRcdFx0fVxyXG5cdFx0XHR9XHJcblx0XHR9XHJcbjwvc2NyaXB0PlxyXG5cclxuPHN0eWxlPlxyXG48L3N0eWxlPlxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///14\n");
 
 /***/ }),
 /* 15 */
@@ -1844,6 +1838,96 @@ module.exports = {
     "flex": 1
   },
   "@VERSION": 2
+}
+
+/***/ }),
+/* 18 */
+/*!*********************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/lib/format-log.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.log = log;exports.default = formatLog;function typof(v) {
+  var s = Object.prototype.toString.call(v);
+  return s.substring(8, s.length - 1);
+}
+
+function isDebugMode() {
+  /* eslint-disable no-undef */
+  return typeof __channelId__ === 'string' && __channelId__;
+}
+
+function jsonStringifyReplacer(k, p) {
+  switch (typof(p)) {
+    case 'Function':
+      return 'function() { [native code] }';
+    default:
+      return p;}
+
+}
+
+function log(type) {
+  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+  console[type].apply(console, args);
+}
+
+function formatLog() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+  var type = args.shift();
+  if (isDebugMode()) {
+    args.push(args.pop().replace('at ', 'uni-app:///'));
+    return console[type].apply(console, args);
+  }
+
+  var msgs = args.map(function (v) {
+    var type = Object.prototype.toString.call(v).toLowerCase();
+
+    if (type === '[object object]' || type === '[object array]') {
+      try {
+        v = '---BEGIN:JSON---' + JSON.stringify(v, jsonStringifyReplacer) + '---END:JSON---';
+      } catch (e) {
+        v = type;
+      }
+    } else {
+      if (v === null) {
+        v = '---NULL---';
+      } else if (v === undefined) {
+        v = '---UNDEFINED---';
+      } else {
+        var vType = typof(v).toUpperCase();
+
+        if (vType === 'NUMBER' || vType === 'BOOLEAN') {
+          v = '---BEGIN:' + vType + '---' + v + '---END:' + vType + '---';
+        } else {
+          v = String(v);
+        }
+      }
+    }
+
+    return v;
+  });
+  var msg = '';
+
+  if (msgs.length > 1) {
+    var lastMsg = msgs.pop();
+    msg = msgs.join('---COMMA---');
+
+    if (lastMsg.indexOf(' at ') === 0) {
+      msg += lastMsg;
+    } else {
+      msg += '---COMMA---' + lastMsg;
+    }
+  } else {
+    msg = msgs[0];
+  }
+
+  console[type](msg);
 }
 
 /***/ })
