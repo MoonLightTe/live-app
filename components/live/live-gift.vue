@@ -39,7 +39,9 @@
 				// 礼物列表
 				gifts: [],
 				// 默认头像
-				DefaultAvatar: "../../static/logo.png"
+				DefaultAvatar: "../../static/logo.png",
+				// 定时器id
+				timer: ''
 			}
 		},
 		// 组件中是不存在onload的 我们可以使用 created
@@ -53,6 +55,7 @@
 					num: 1,
 				})
 				this.toBottom()
+				this.autoHide()
 			}, 3000)
 		},
 		methods: {
@@ -61,18 +64,39 @@
 			// 2.操作dom一定需要在nextTick这个钩子函数中来进行
 			// 虚拟dom的时候我们是读不到的
 			toBottom() {
-				this.$nextTick(()=>{
-				let index = this.gifts.length - 1;
-				let ref = 'item' + index
-				if(this.$refs[ref]){
-					console.log(this.$refs[ref][0]);
-					dom.scrollToElement(this.$refs[ref][0],{})
-				}
+				this.$nextTick(() => {
+					let index = this.gifts.length - 1;
+					let ref = 'item' + index
+					if (this.$refs[ref]) {
+						dom.scrollToElement(this.$refs[ref][0], {})
+					}
 				})
-			
+
+			},
+			// 自动消失1
+			autoHide() {
+				// 设置几秒自动移除礼物效果
+				// 需要有礼物才启动
+				if (this.gifts.length) {
+					this.timer = setInterval(() => {
+						this.gifts.splice(0, 1)
+					}, 5000)
+				}
 			}
+		},
+		watch:{
+			timer(newId,oldId){
+				console.log(newId);
+				console.log(oldId);
+				console.log(this.gifts.length);
+				if(oldId !== ''){
+					setTimeout(()=>{
+						clearInterval(oldId)
+					},5000)
+				}
 			}
 		}
+	}
 </script>
 
 <style>
