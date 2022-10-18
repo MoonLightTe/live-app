@@ -86,9 +86,6 @@
 		},
 		watch:{
 			timer(newId,oldId){
-				console.log(newId);
-				console.log(oldId);
-				console.log(this.gifts.length);
 				if(oldId !== ''){
 					setTimeout(()=>{
 						clearInterval(oldId)

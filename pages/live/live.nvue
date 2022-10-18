@@ -5,9 +5,12 @@
 			src="https://c1--cn-gotcha208.bilivideo.com/live-bvc/454036/live_15004349_10973745_1500/index.m3u8?expires=1665302917&len=0&oi=1902996958&pt=web&qn=0&trid=100757667edfa7d1408cbc74989ada980377&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha208&sign=fc4b78ae4be38d0c628a96bd3fd3251d&sk=14523fba55a362a3149555042c005152&p2p_type=1&src=57345&sl=1&free_type=0&pp=rtmp&machinezone=jd&source=onetier&site=921e1f1e81b9a90635f2e3227cd0cb6c&order=1"
 			autoplay></video> -->
 		<!-- <video class="flex-1" src="https://upos-sz-estgoss.bilivideo.com/upgcxcode/25/51/840415125/840415125-1-64.flv?e=ig8euxZM2rNcNbRj7bdVhwdlhWTjhwdVhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1665312038&gen=playurlv2&os=upos&oi=1902996958&trid=db0c1076ec884346a9c62f9e0b810b83u&mid=111924598&platform=pc&upsig=32ad2413e62b6647f70959918633f723&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&bvc=vod&nettype=0&orderid=0,3&agrr=1&bw=166796&logo=80000000" autoplay></video> -->
+		<!-- <video class="flex-1"
+			src="https://c1--cn-gotcha208.bilivideo.com/live-bvc/219602/live_15004349_10973745_1500/index.m3u8?expires=1666085465&len=0&oi=1032646212&pt=web&qn=0&trid=1007a34f848d809e4fb3abc10527ba21301c&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha208&sign=c41446126168a691973d21341f5d89cc&sk=14523fba55a362a3149555042c005152&p2p_type=1&src=57345&sl=1&free_type=0&pp=rtmp&machinezone=jd&source=onetier&site=565a3099300343bd378a4bfe658ca2c9&order=1"
+			autoplay></video> -->
 		<video class="flex-1"
-			src="https://cn-gddg-ct-01-21.bilivideo.com/live-bvc/696783/live_1388514638_9387369_4000/index.m3u8?expires=1665308701&len=0&oi=1902996958&pt=web&qn=0&trid=1007e8e55a9c21ac4ac6aa6dc874fb49d8de&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha01&sign=de97fa066d1ebb0eaf6f43b2c05b39a0&sk=657866af8fc16d8b2b84dfdde3e9814376eb4640b48f5932d44509b3af9da4a2&flvsk=1304f646dfeb4df8b6e7ff33c167d3ad491555cae985818bb2a5ec341f048d3d&p2p_type=1&src=57345&sl=10&free_type=0&sid=cn-gddg-ct-01-21&chash=1&sche=ban&bvchls=1&score=18&pp=rtmp&machinezone=jd&source=onetier&site=4a1fed473066c9551f875584128a0c0a&order=1"
-			autoplay></video>
+			src="https://cn-jsyz-ct-03-50.bilivideo.com/live-bvc/123570/live_393885664_4865863_2500/index.m3u8?expires=1666088448&len=0&oi=1032646212&pt=web&qn=0&trid=100782ccdc4c4b1240a1b61d5ef82506b0a4&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha01&sign=94c89407b50fd4a8612365066d48b134&sk=657866af8fc16d8b2b84dfdde3e981439a7758553687e0623dfd0f641d3bb6a3&flvsk=1304f646dfeb4df8b6e7ff33c167d3ad61ef338f6b27355110b57a8bed130554&p2p_type=1&src=57345&sl=1&free_type=0&sid=cn-jsyz-ct-03-50&chash=1&sche=ban&bvchls=1&score=5&pp=rtmp&machinezone=jd&source=onetier&site=3cb3bd030c4e84f6993128dc04d3d055&order=1"
+			controls autoplay></video>
 		<!-- 頂部 -->
 		<view style="position: fixed;left:0;right: 0;" :style="`top:${statusBarHeight}px`">
 			<!-- 顶部 头像 和在线观看的用户 -->
@@ -62,21 +65,58 @@
 
 			</view>
 			<!--底部  -->
-			<view style="position: fixed;left: 0; bottom: 0;right: 0; height: 120rpx;" class="bg-danger"></view>
+			<view style="position: fixed;left: 0; bottom: 0;right: 0; height: 120rpx;"
+				class="flex align-center justify-between">
+				<!-- 输入框 -->
+				<view class="px-2">
+					<view class="btn px-3" @click="openInput">
+						<text class="text-white font">说点什么...</text>
+					</view>
+				</view>
+				<!-- 礼物栏 -->
+				<view class="flex align-center justify-between mr-3" style="width: 400rpx;">
+					<view class="btn" style="width: 80rpx;">
+						<text class="iconfont text-white" style="font-size:40px;">&#xe633;</text>
+					</view>
+					<view class="btn bg-warning" style="width: 80rpx;">
+						<text class="iconfont text-white">&#xe67c;</text>
+					</view>
+					<view class="btn" style="width: 80rpx;">
+						<text class="iconfont text-white">&#xe7cd;</text>
+					</view>
+					<view class="btn" style="width: 80rpx;">
+						<text class="iconfont text-white">&#xe607;</text>
+					</view>
+				</view>
+			</view>
+
+			<!-- 输入框弹出层 -->
+			<uni-popup type='bottom' ref="input" >
+				<view class=" flex align-center px-3 text-warning bg-white" style="height: 120rpx;">
+				<input type="text" placeholder="鳄鱼" v-model="barrage" class="border rounded flex-1 px-3 font-md" focus style="height: 80rpx;">
+				<view class="bg-main flex align-center justify-center py-2 px-2 ml-2 rounded-circle" @click="sendBarrage">
+						<text class="font text-warning ">发送</text>
+				</view>
+				</view>
+			</uni-popup>
 		</view>
-		</view>
+	</view>
 </template>
 
 <script>
 	import liveGift from '@/components/live/live-gift.vue'
+	import uniPopup from "@/components/uni-ui/uni-popup/components/uni-popup/uni-popup.vue"
 	export default {
 
 		components: {
 			liveGift,
+			uniPopup,
 		},
 		data() {
 			return {
-				statusBarHeight: 0
+				statusBarHeight: 0,
+				// 彈幕
+				barrage:""
 			}
 		},
 		onLoad() {
@@ -84,7 +124,12 @@
 			this.statusBarHeight = res.statusBarHeight
 		},
 		methods: {
-
+			openInput() {
+				this.$refs.input.open()
+			},
+			sendBarrage(){
+				this.$refs.input.close()
+			}
 		}
 	}
 </script>
@@ -92,5 +137,14 @@
 <style>
 	.page {
 		flex: 1;
+	}
+
+	.btn {
+		display: flex;
+		height: 80rpx;
+		align-items: center;
+		justify-content: center;
+		border-radius: 40rpx;
+		background-color: rgba(255, 255, 255, .5);
 	}
 </style>

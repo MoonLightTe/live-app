@@ -5,7 +5,7 @@
 			const domModule = weex.requireModule('dom')
 			domModule.addRule('fontFace', {
 				'fontFamily': "iconfont",
-				'src': "url('http://at.alicdn.com/t/c/font_3668475_c96lm4pzfnp.ttf?t=1663925251973')"
+				'src': "url('http://at.alicdn.com/t/font_1859985_7mxozsfdvib.ttf')"
 			});
 		},
 		onShow: function() {
@@ -21,8 +21,7 @@
 	/*每个页面公共css */
 	@import url('/common/common.css');
 	@import url('/common/free.css');	
+	/* #ifndef APP-PLUS-NVUE */
 	@import url("/common/icon.css");
-	/* #ifdef APP-PLUS-NVUE */
-
 	/* #endif */
 </style>
