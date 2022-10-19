@@ -46,17 +46,17 @@
 		},
 		// 组件中是不存在onload的 我们可以使用 created
 		created() {
-			setInterval(() => {
-				this.gifts.push({
-					username: '小智',
-					avatar: "../../static/logo.png",
-					gift_name: "小火龙",
-					gift_image: '../../static/gift/3.png',
-					num: 1,
-				})
-				this.toBottom()
-				this.autoHide()
-			}, 3000)
+			// setInterval(() => {
+			// 	this.gifts.push({
+			// 		username: '小智',
+			// 		avatar: "../../static/logo.png",
+			// 		gift_name: "小火龙",
+			// 		gift_image: '../../static/gift/3.png',
+			// 		num: 1,
+			// 	})
+			// 	this.toBottom()
+			// 	this.autoHide()
+			// }, 3000)
 		},
 		methods: {
 			// 我们需要解决一个问题 ，就是礼物不会滚动的问题 weex 有一个dom模块
@@ -82,6 +82,12 @@
 						this.gifts.splice(0, 1)
 					}, 5000)
 				}
+			},
+			// send方法
+			sendGift(giftInfo){
+				this.gifts.push(giftInfo),
+				this.toBottom()
+				this.autoHide()
 			}
 		},
 		watch:{

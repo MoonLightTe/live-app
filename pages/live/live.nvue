@@ -1,6 +1,6 @@
 <template>
 	<view class="page">
-		<!-- <video class="flex-1" src="https://cctvwbndks.v.kcdnvip.com/cctvwbnd/cctv1_2/index.m3u8" autoplay></video> -->
+		<video class="flex-1" src="https://cctvwbndks.v.kcdnvip.com/cctvwbnd/cctv1_2/index.m3u8" autoplay></video>
 		<!-- <video class="flex-1"
 			src="https://c1--cn-gotcha208.bilivideo.com/live-bvc/454036/live_15004349_10973745_1500/index.m3u8?expires=1665302917&len=0&oi=1902996958&pt=web&qn=0&trid=100757667edfa7d1408cbc74989ada980377&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha208&sign=fc4b78ae4be38d0c628a96bd3fd3251d&sk=14523fba55a362a3149555042c005152&p2p_type=1&src=57345&sl=1&free_type=0&pp=rtmp&machinezone=jd&source=onetier&site=921e1f1e81b9a90635f2e3227cd0cb6c&order=1"
 			autoplay></video> -->
@@ -8,9 +8,8 @@
 		<!-- <video class="flex-1"
 			src="https://c1--cn-gotcha208.bilivideo.com/live-bvc/219602/live_15004349_10973745_1500/index.m3u8?expires=1666085465&len=0&oi=1032646212&pt=web&qn=0&trid=1007a34f848d809e4fb3abc10527ba21301c&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha208&sign=c41446126168a691973d21341f5d89cc&sk=14523fba55a362a3149555042c005152&p2p_type=1&src=57345&sl=1&free_type=0&pp=rtmp&machinezone=jd&source=onetier&site=565a3099300343bd378a4bfe658ca2c9&order=1"
 			autoplay></video> -->
-		<video class="flex-1"
-			src="https://cn-jsyz-ct-03-50.bilivideo.com/live-bvc/123570/live_393885664_4865863_2500/index.m3u8?expires=1666088448&len=0&oi=1032646212&pt=web&qn=0&trid=100782ccdc4c4b1240a1b61d5ef82506b0a4&sigparams=cdn,expires,len,oi,pt,qn,trid&cdn=cn-gotcha01&sign=94c89407b50fd4a8612365066d48b134&sk=657866af8fc16d8b2b84dfdde3e981439a7758553687e0623dfd0f641d3bb6a3&flvsk=1304f646dfeb4df8b6e7ff33c167d3ad61ef338f6b27355110b57a8bed130554&p2p_type=1&src=57345&sl=1&free_type=0&sid=cn-jsyz-ct-03-50&chash=1&sche=ban&bvchls=1&score=5&pp=rtmp&machinezone=jd&source=onetier&site=3cb3bd030c4e84f6993128dc04d3d055&order=1"
-			controls autoplay></video>
+		<!-- <video class="flex-1"
+			controls autoplay></video> -->
 		<!-- 頂部 -->
 		<view style="position: fixed;left:0;right: 0;" :style="`top:${statusBarHeight}px`">
 			<!-- 顶部 头像 和在线观看的用户 -->
@@ -59,11 +58,9 @@
 				</view>
 			</view>
 			<!-- 禮物組件 -->
-			<liveGift></liveGift>
+			<liveGift ref="gift"></liveGift>
 			<!-- 彈幕組件 -->
-			<view class="bg-warning position-fixed" style="left:0; bottom: 120rpx; width: 500rpx; height: 500rpx;">
-
-			</view>
+			<f-barrage ref="barrage"></f-barrage>
 			<!--底部  -->
 			<view style="position: fixed;left: 0; bottom: 0;right: 0; height: 120rpx;"
 				class="flex align-center justify-between">
@@ -106,11 +103,12 @@
 <script>
 	import liveGift from '@/components/live/live-gift.vue'
 	import uniPopup from "@/components/uni-ui/uni-popup/components/uni-popup/uni-popup.vue"
+	import fBarrage from '@/components/live/f-barrage.vue'
 	export default {
-
 		components: {
 			liveGift,
 			uniPopup,
+			fBarrage
 		},
 		data() {
 			return {
@@ -122,6 +120,30 @@
 		onLoad() {
 			let res = uni.getSystemInfoSync()
 			this.statusBarHeight = res.statusBarHeight
+		},
+		mounted() {
+			// 演示送礼物
+			let num = 1 
+			setInterval(() => {
+				this.$refs.gift.sendGift({
+					username: '小智' +num,
+					avatar: "../../static/logo.png",
+					gift_name: "小火龙",
+					gift_image: '../../static/gift/3.png',
+					num
+				})
+				num++
+			}, 3000)
+			// 演示發送彈幕
+			let id =1
+			setInterval(()=>{
+				this.$refs.barrage.sendBarrage({
+					id,
+					name:'測試' + id ,
+					barrage:"測試内容" +id
+				})
+				id++
+			},1000)
 		},
 		methods: {
 			openInput() {
